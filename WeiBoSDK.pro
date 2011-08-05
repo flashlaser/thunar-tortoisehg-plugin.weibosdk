@@ -30,8 +30,7 @@ INCLUDEPATH += . common src src/oauth test include/libweibo
 #           test/callback/wbcb_trends.inl \
 #           test/callback/wbcb_invitecontact.inl
 
-HEADERS += targetver.h \
-           common/bbiconv.h \
+HEADERS += common/bbiconv.h \
            common/strconv.h \
            common/Urlcode.h \          
            src/wbCheck.h \
@@ -44,7 +43,7 @@ HEADERS += targetver.h \
 	   src/weibo.h \
            src/oauth/oauth.h \
 	   src/oauth/xmalloc.h \
-    common/utils.h
+	   common/utils.h
 
 
 #           stdafx.cpp \
@@ -57,6 +56,7 @@ HEADERS += targetver.h \
 #           test/wbinit.cpp \
 #           test/TestCE/stdafx.cpp
 
+# files in 'common' folder should be removed later
 SOURCES += common/bbiconv.cc \
            common/strconv.cpp \
            common/Urlcode.cpp \
@@ -70,4 +70,4 @@ SOURCES += common/bbiconv.cc \
            src/oauth/hash.c \
            src/oauth/oauth.c \
 	   src/oauth/xmalloc.c \
-    common/utils.cpp
+	   common/utils.cpp
