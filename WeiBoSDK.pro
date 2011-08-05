@@ -9,7 +9,6 @@ DEPENDPATH += . \
               libWeiboCE \
               src \
               test \
-              include/libweibo \
 	      src/oauth
 #              test/TestCE
 
@@ -43,7 +42,6 @@ HEADERS += targetver.h \
            src/wbString.h \
            src/wbURL.h \
 	   src/weibo.h \
-           include/libweibo/weibo.h \
            src/oauth/oauth.h \
 	   src/oauth/xmalloc.h \
     common/utils.h
