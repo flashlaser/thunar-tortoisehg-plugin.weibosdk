@@ -36,7 +36,7 @@
 // 请求
 struct t_wb_Request
 {
-	// 消毁掉 对象 request（内部有自已消毁机制） ， 回调 WEIBO_OPTION(REQ_DESTROY_FUNCTION)
+	// 消毁掉对象 request(内部有自已消毁机制),回调 WEIBO_OPTION(REQ_DESTROY_FUNCTION)
 	fun_req_destroy freq_destroy_;
 
 	// 用户数据

@@ -54,7 +54,9 @@ extern "C" {
 		}
 	}
 
-	/** 创建一个请求，每个事件都需要 创建一个请求（一定要通过 weibo_destroy_request（） 进行消毁 */
+	/** 创建一个请求.
+	    每个事件都需要创建一个请求(一定要通过 weibo_destroy_request()进行消毁)
+	*/
 	WEIBO_API WEIBORequest* loWeibo_request_create(void)
 	{
 		WEIBORequest* request = malloc( sizeof( struct t_wb_Request ) );

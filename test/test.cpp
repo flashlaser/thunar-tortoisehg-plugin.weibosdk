@@ -120,7 +120,7 @@ struct t_wb_interface
 #endif
 };
 
-
+//初始化 wb_interface,设置回调函数
 static
 bool load_wb_interface(t_wb_interface* pwb_interface)
 {
@@ -1523,8 +1523,10 @@ int _tmain(int argc, char* argv[])
 int main(int argc, char** argv)
 #endif
 {
+	//'cookie' should be 'auth_method'
 	int cookie = 0;
 	char enter[128] = {0};
+	//this struct is too big...
 	struct t_wb_allstruct  twball;
 	struct t_wb_interface  wb_interface;
 	memset(&twball , 0 , sizeof( struct t_wb_allstruct ) );
