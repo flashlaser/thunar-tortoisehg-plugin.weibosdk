@@ -6,23 +6,27 @@ TEMPLATE = app
 TARGET = 
 DEPENDPATH += . \
               common \
-              libWeiboCE \
+#              libWeiboCE \
               src \
               test \
 	      src/oauth
 #              test/TestCE
 
-INCLUDEPATH += . common src src/oauth test include/libweibo
+
+
+
+#include/libweibo
+INCLUDEPATH += . common src src/oauth test
+
+
+
+
 
 # Input
 #           stdafx.h \
 #           libWeiboCE/stdafx.h \
-#           test/config.h \
-#           test/option.h \
 #           test/stdafx.h \
 #           test/targetver.h \
-#           test/wbcallback.h \
-#           test/wbinit.h \
 #           test/TestCE/stdafx.h \
 #           test/callback/wbcb_block.inl \
 #           test/callback/wbcb_hotpoint.inl \
@@ -43,17 +47,19 @@ HEADERS += common/bbiconv.h \
 	   src/weibo.h \
            src/oauth/oauth.h \
 	   src/oauth/xmalloc.h \
-	   common/utils.h
+	   common/utils.h \
+	   test/config.h \
+	   test/option.h \
+	   test/wbcallback.h \
+	   test/wbinit.h
+
+
 
 
 #           stdafx.cpp \
 #           libWeiboCE/libWeiboCE.cpp \
 #           libWeiboCE/stdafx.cpp \
-#           test/option.cpp \
 #           test/stdafx.cpp \
-#           test/test.cpp \
-#           test/wbcallback.cpp \
-#           test/wbinit.cpp \
 #           test/TestCE/stdafx.cpp
 
 # files in 'common' folder should be removed later
@@ -70,4 +76,8 @@ SOURCES += common/bbiconv.cc \
            src/oauth/hash.c \
            src/oauth/oauth.c \
 	   src/oauth/xmalloc.c \
-	   common/utils.cpp
+	   common/utils.cpp \
+	   test/option.cpp \
+	   test/test.cpp \
+	   test/wbcallback.cpp \
+	   test/wbinit.cpp

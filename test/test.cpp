@@ -31,7 +31,7 @@
 //#endif //WIN32||WINCE
 
 #include "wbinit.h"
-#include <libweibo/weibo.h>
+#include "weibo.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
@@ -67,13 +67,11 @@
 #		define GETPROCADDRESS GetProcAddress
 #		define SYSTEM(s)	  system(s) 
 #	endif 
-#	define TEST_MAIN _tmain
 //
 #	include <Windows.h>
 #else
 #	define GETPROCADDRESS
 #	define SYSTEM(s)
-#	define TEST_MAIN main
 #endif // WIN
 
 
@@ -1519,8 +1517,11 @@ void test_weibo(WEIBORequest* wbRequest , int option , struct t_wb_allstruct* pa
 	SYSTEM("pause");
 }
 
-
-int TEST_MAIN(int argc,char** argv)
+#if defined(WIN32) || defined(WINCE)// WIN
+int _tmain(int argc, char* argv[])
+#else
+int main(int argc, char** argv)
+#endif
 {
 	int cookie = 0;
 	char enter[128] = {0};
