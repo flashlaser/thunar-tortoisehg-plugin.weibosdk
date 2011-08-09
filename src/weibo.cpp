@@ -87,7 +87,7 @@ extern "C" {
 		return ret;
 	}
 
-	/** 执行,等待回调数据的执行，其执行结果，会通过 weibo_request_setopt（）设置的方法，告之开发者  */
+	/** 执行,等待回调数据的执行,其执行结果,会通过weibo_request_setopt()预先设置的方法,告之开发者  */
 	WEIBO_API int loWeibo_request_start(WEIBORequest* request , bool bAsyn)
 	{
 		struct t_wb_Request* reqSession = (struct t_wb_Request*)request;

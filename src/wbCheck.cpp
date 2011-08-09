@@ -1121,7 +1121,6 @@ f_check_callback vector_check_callbak[]=
 
 };
 
-
 int Weibo_check_valid(int option ,const void* t_wb)
 {
 	if( WEIBO_OPTION(UNK) >= option ||

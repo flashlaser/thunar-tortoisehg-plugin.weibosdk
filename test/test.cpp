@@ -75,6 +75,9 @@
 #endif // WIN
 
 
+const char AppKey[] =      "";
+const char AppSecret[] =   "";
+
 /** oauth copy */
 typedef void (*fun_loWeibo_oauth_copy)(struct t_wb_oauth* pdest , const struct t_wb_oauth* psrc);
 
@@ -1571,13 +1574,13 @@ int main(int argc, char** argv)
 	}
 	// set app key
 	printf("Please enter APP KEY:");
-	gets( enter );
-	wb_interface.pfun_request_setopt(wbRequest , WEIBO_OPTION(REQ_APPKEY) , enter);
+//	gets( enter );
+	wb_interface.pfun_request_setopt(wbRequest , WEIBO_OPTION(REQ_APPKEY) , AppKey);
 
 	// set app secret
 	printf("Please enter APP SECRET:");
-	gets( enter );
-	wb_interface.pfun_request_setopt(wbRequest , WEIBO_OPTION(REQ_SECRETKEY) , enter);
+//	gets( enter );
+	wb_interface.pfun_request_setopt(wbRequest , WEIBO_OPTION(REQ_SECRETKEY) , AppSecret);
 
 	// set 
 	printf("Please enter result data format(josn=0/xml=1):");
@@ -1601,7 +1604,7 @@ int main(int argc, char** argv)
 		wb_interface.pfun_request_setopt(wbRequest , WEIBO_OPTION(REQ_USERDATA) , &twball.oauth_accesstoken );
 		wb_interface.pfun_request_start(wbRequest , false);
 
-		//
+		// XXX - why stop wbRequest? :o
 		wb_interface.pfun_request_stop(wbRequest);
 
 		// 2 go to run IE  to oauth authrioze
@@ -1717,8 +1720,8 @@ int main(int argc, char** argv)
 
 		void *pUsrData = NULL;
 
-		//  其他所有微博接口
-		test_weibo( wbRequest , atoi(enter) , &twball ,&wb_interface,pUsrData );
+		//其他所有微博接口
+		test_weibo( wbRequest, atoi(enter), &twball, &wb_interface, pUsrData );
 
 		//
 		//memset(&twball.cookie,0,sizeof(twball.cookie));

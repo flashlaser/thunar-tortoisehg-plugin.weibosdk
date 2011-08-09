@@ -2659,6 +2659,7 @@ f_url_callback vector_url_callbak[]=
 
 };
 
+//XXX - LOHTTP
 int Weibo_url_set(lohttp::LOHttp* pHttp , WEIBOoption option , const void* t_wb , const struct t_wb_REQ_EX* req_ex)
 {
 	lohttp::HTTPChar URI[URI_MAX_LEN] = {0};

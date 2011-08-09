@@ -190,6 +190,7 @@ int Weibo_session_start(struct t_wb_HttpSession* session, void* userdata )
 	// free 
 	if( !session->phttp_ )
 	{// create libhttp.httptask
+		// XXX - LOHTTP
 		session->phttp_ = lohttp::Http_createobject();
 		if( !session->phttp_ )
 		{
